@@ -1,7 +1,7 @@
 Vue 3 강의 - 스프링부트 REST API를 이용하여 쇼핑몰 만들기(JPA, MariaDB, JWT)  240714
 
 - vue3, springBoot, bootstrap5, 인텔리제이에서 db연결, JPA,
-- 첨 vue설치후, 스프링 설치,
+- 첨 vue설치후, 스프링 설치(및 연결), router 설치,,
 - AppOriginal.vue, mainOriginal.js보라. <-- router하면서, 수정함.
 
 ctrl+alt+L : 코드정렬
