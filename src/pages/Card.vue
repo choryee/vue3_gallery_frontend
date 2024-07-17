@@ -1,3 +1,4 @@
+
 <template>
   <div class="card shadow-sm">
     <span class="img" :style="{backgroundImage: `url(${item.imgPath})`}"/>

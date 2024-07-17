@@ -7,7 +7,33 @@ Vue 3 강의 - 스프링부트 REST API를 이용하여 쇼핑몰 만들기(JPA,
 ctrl+alt+L : 코드정렬
 
 https://github.com/africalib/studies/tree/master/vue3/gallery
+------
 
+vue에서
+<template>
+  BB
+  v-model=""
+  v-for=""
+</template>
+
+<script>
+export default{
+ AAA
+}
+</script>
+
+-->  AAA부분의 코드(데이터등)은 export되었으므로, 다른 데서 사용할 수 있는데,
+그것을 BB에서 사용도 된다. BB부분에서는 vue데이터인지를 모르므로, vue디렉티크인 v-model, v-for등을 사용해서, vue를 사용할 지 안다.
+이것은 다른 프런트엔드 라이브러리에도 해당됨. 즉, BB부분에 리액트문법을 사용할 것면, 리액트 디렉티브를 사용해야.240717
+
+------
+이 강의에서 사용된 설치 명령어.
+npm install -g @vue/cli
+vue create 프로젝트명
+vue i axios
+npm i vue-router
+
+------
 
 아무 폴더에서  npm install -g @vue/cli
 해당폴더에서 vue create 프로젝트명
@@ -41,7 +67,7 @@ vue.config.js에서
 // module.exports = defineConfig({
 //   transpileDependencies: true
 // })
-// 위 디폴트를 지움.27'00. 그리고 아래 붙임.
+// 위 디폴트를 지움.27'00. 그리고 아래 붙임(vue.config.js를 보라.)
 
 // '/api': { 이 주소이면, 우회해서, 서버인 8080으로 갈꺼야.
 
