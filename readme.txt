@@ -1,7 +1,7 @@
 Vue 3 강의 - 스프링부트 REST API를 이용하여 쇼핑몰 만들기(JPA, MariaDB, JWT)  240714-270721 완강함.
 
-- vue3, springBoot, bootstrap5, 인텔리제이에서 db연결, JPA, JWT<--이건 토큰만든것고, 시큐리티와 다른것.
-- 첨 vue설치후, 스프링 설치(및 연결), router 설치,,
+- vue3, springBoot, bootstrap5, 인텔리제이에서 db연결, JPA, JWT<--이건 토큰만든것이고, 시큐리티와 다른것.
+- 첨 vue설치후, 스프링 설치(및 연결), router,vuex(store) 설치,,
 - AppOriginal.vue, mainOriginal.js보라. <-- router하면서, 수정함.
 
 ctrl+alt+L : 코드정렬
@@ -185,8 +185,8 @@ npm install vuex@next --save
 그전에 sessionStorage에 저장 시도.
 
 router.push({path:'/'});
-        //아, router.push()는 배열의 push() 메서드와 다릅니다. Vue Router에서 push는 경로를 변경하는 메서드입니다.
-        이는 Vue Router의 Router 인스턴스에 정의된 메서드로, 배열의 push와는 완전히 다른 기능을 합니다. 아래에 이를 더 자세히 설명하겠습니다.
+    //아, router.push()는 배열의 push() 메서드와 다릅니다. Vue Router에서 push는 경로를 변경하는 메서드입니다.
+    이는 Vue Router의 Router 인스턴스에 정의된 메서드로, 배열의 push와는 완전히 다른 기능을 합니다. 아래에 이를 더 자세히 설명하겠습니다.
 
 10. jwt로 로그인 보완. 013030
 - 여기서 jwt구현이후, 회원,item등 서버로 요청 보낼때는 서버에서 만든 토큰을 서버에서 다시 받아 확인후, 그 토큰에서
@@ -228,11 +228,11 @@ const computedPrice = computed(()=>{
  즉, 해당 템플릿안에서 사용하려면, return {}안에 넣어야.
  해당 템플릿안에서 사용하는 게 아니고, 그냥 함수만 실행하려면,  load();하면됨.
 
- const args = JSON.parse(JSON.stringify(state.form));
+ const args = JSON.parse(JSON.stringify(state.form)); <-- 깊은 복사.
  args.items = JSON.stringify(state.items);
 
  16.기능 보완. 025700
-@keyup.enter="submit"> enter버튼으로 submit되게.
+@keyup.enter="submit"> Enter 자판 버튼으로 submit되게.
 
 @Transactional // 034950
 @PostMapping("/api/orders")
