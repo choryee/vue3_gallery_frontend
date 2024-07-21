@@ -24,15 +24,20 @@
   </div>
 </template>
 <script>
-import lib from '@/scritps/lib'
+import lib from '@/scripts/lib'
+import axios from "axios";
 export default {
   name: 'Card',
   props:{
     item:Object,
   },
   setup(){
-
-    return {lib}
+    const addToCart=(itemId)=>{
+      axios.post(`/api/cart/items/${itemId}`).then(()=>{
+        console.log(' success >>>',  );
+      })
+    }
+    return {lib, addToCart}
   }
 }
 </script>

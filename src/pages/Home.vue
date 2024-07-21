@@ -1,7 +1,6 @@
 <template>
   <div class="home">
 
-
     <div class="album py-5 bg-body-tertiary">
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -10,7 +9,6 @@
             <Card :item="item"/>
 
           </div>
-
         </div>
       </div>
     </div>
@@ -33,8 +31,8 @@ export  default {
     })
 
     axios.get('/api/items').then(({data})=>{
-      console.log('  data>>>',  data); // ['alpha', 'beta', 'gamma']
-      console.log('  data>>>',  {data}); // {data:['alpha', 'beta', 'gamma']}
+      console.log(' 첫화면에서 data뿌리기>>>',  data); // ['alpha', 'beta', 'gamma']
+      console.log(' 첫화면에서 data뿌리기>>>',  {data}); // {data:['alpha', 'beta', 'gamma']}
       state.items = data;
     })
 
