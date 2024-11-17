@@ -16,8 +16,6 @@
 </template>
 
 <script>
-
-
 import axios from "axios";
 import {reactive} from "vue";
 import Card from "@/pages/Card";

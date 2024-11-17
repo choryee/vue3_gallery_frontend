@@ -1,14 +1,17 @@
 Vue 3 강의 - 스프링부트 REST API를 이용하여 쇼핑몰 만들기(JPA, MariaDB, JWT)  240714-270721 완강함.
 
 - vue3, springBoot, bootstrap5, 인텔리제이에서 db연결, JPA, JWT<--이건 토큰만든것이고, 시큐리티와 다른것.
-- 첨 vue설치후, 스프링 설치(및 연결), router,vuex(store) 설치,,
+- 첨 vue설치후, 스프링 설치(및 연결), router,vuex(store) 설치,
 - AppOriginal.vue, mainOriginal.js보라. <-- router하면서, 수정함.
+- vue셋팅 법 : readme_vueSetting.txt를 보라.
+
 
 ctrl+alt+L : 코드정렬
 
 https://github.com/africalib/studies/tree/master/vue3/gallery
 
 npm run serve
+http://localhost:3000/
 
 벡엔드 에러시
 오른쪽 Database탭 클릭
@@ -44,7 +47,7 @@ api로해서 로그인체크 확인해야.(/api/account/check) <-- App.js함.
 @PostMapping("/api/account/login")로 호출하면, 서버에서 토큰 만들어서, 쿠키형태(서버에서도 만들수 있음)로 호출한 곳으로 보내줘,
 브라우저에 저장됨.
 
-Claims claims = jwtService.getClaims(token); <-- 토큰만들때 secretKey형태로 id나 비번등 저장해둔 id,비번을 다시 꺼내때 쓰는 것.
+Claims claims = jwtService.getClaims(token); <-- (토큰만들 때 secretKey형태로 id나 비번등 저장해둔 id,비번을) 토큰에서, 다시 꺼내때 쓰는 것.
 claims은 그것을 가지고 있는 객체임.
 
 @GetMapping("/api/account/check")<-- 이것은 로그인을 계속 유지하려는 것. App.vue에서 서버로 호출함. 확인하라.
@@ -92,7 +95,7 @@ export default{
 
 ------
 cors오류에서
-http://localhost:3000/api/account from origin http://localhost:8080 has been blocked by CORS..
+http://localhost:3000/api/account from origin http://localhost:8080 / has been blocked by CORS..
 에서 origin은 화면임.
 
 
@@ -119,6 +122,8 @@ mutli-word로 파일명 에러 뜰때 package.json에
       "vue/multi-word-component-names": 0
     }
 
+
+3. 프로젝트생성- 백엔드. 18'27
 gallery에 대고, 오른쪽 클릭/new/project/Spring Initiator
 Spring web만 의존성 추가해서 시작함.
 
@@ -130,7 +135,7 @@ id 'org.springframework.boot' version '3.3.1'인데
 gallery
 -backend
 -frontend
-상태 에서, backend에 자바 클래스만들면, spring web의존성이 적용 안돼. @RestController등이 임포트 안 됨.
+상태 에서, backend"안"에 자바 클래스만들면, spring web의존성이 적용 안돼. @RestController등이 임포트 안 됨.
 
 그래서, 인텔리제이 프로젝트 창 2개로 열어서 작업해야 할 듯.
 
@@ -185,7 +190,7 @@ npm install vuex@next --save
 그전에 sessionStorage에 저장 시도.
 
 router.push({path:'/'});
-    //아, router.push()는 배열의 push() 메서드와 다릅니다. Vue Router에서 push는 경로를 변경하는 메서드입니다.
+    //아, router.push()는, 배열의 push() 메서드와 다릅니다. Vue Router에서 push는 경로를 변경하는 메서드입니다.
     이는 Vue Router의 Router 인스턴스에 정의된 메서드로, 배열의 push와는 완전히 다른 기능을 합니다. 아래에 이를 더 자세히 설명하겠습니다.
 
 10. jwt로 로그인 보완. 013030
@@ -209,7 +214,7 @@ List<Integer> itemIds = carts.stream().map(Cart::getItemId).toList();
 https://cdnjs.com/libraries/font-awesome/4.7.0
 
  setup(){
-    const addToCart=(itemId)=>{
+    const addToCart= (itemId)=>{
       axios.post(`/api/cart/items/${itemId}`).then(()=>{
       }
   -----

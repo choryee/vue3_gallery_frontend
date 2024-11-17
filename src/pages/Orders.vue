@@ -9,6 +9,7 @@
             <th>주소</th>
             <th>결제 수단</th>
             <th>구입 항목</th>
+            <th>구입 날짜</th>
         </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
             <td>
               <div v-for="(i, idx2) in o.items" :key="idx2">{{ i.name }}</div>
             </td>
+            <td>{{o.reg_date}}</td>
           </tr>
         </tbody>
       </table>

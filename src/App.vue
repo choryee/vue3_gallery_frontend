@@ -1,9 +1,7 @@
 <template>
-
   <Header/>
   <RouterView/>
   <Footer/>
-
 </template>
 
 <script>
@@ -21,8 +19,8 @@ export default {
     Header
   },
   setup(){
-    // 013051. 로그인후, 새로고침하면 로그인 풀리는 것을 sessionStroage로 전역으로 관리. 나중에, 세션이나 쿠키로 변경 가능.
-    // 11강전까지 sessionStorage에 저장한 id는 F12/Applications에서 그것을 변경가능해, 1id=0으로 해버리면 다시 로그인이 풀려버려,
+    // 01'30'51. 로그인후, 새로고침하면 로그인 풀리는 것을 sessionStroage로 전역으로 관리. 나중에, 세션이나 쿠키로 변경 가능.
+    // 11강전까지 sessionStorage에 저장한 id는 F12/Applications에서 그것을 변경가능해, id=0으로 해버리면 다시 로그인이 풀려버려,
     // api로해서 로그인체크 확인해야.(/api/account/check). 하단에.
 
     // const id = sessionStorage.getItem('id');
@@ -35,7 +33,7 @@ export default {
     // 그것을 sessionStorage방식이 아닌, 토큰 방식으로 하려는 것.
     const check=()=>{
       axios.get('/api/account/check').then(({data})=>{
-        console.log('App.vue data >>>',  data);
+        console.log('App.vue check() >>>',  data);
         if(data){
           store.commit('setAccount',data || 0);
         }
@@ -44,6 +42,7 @@ export default {
 
     // 경로를 바꿀때마다, 로그인 상태의 값인 id=1인 값을,  체크해서 있으면 있는 값넣고 ,없으면 0을 넣음.
     const route=useRoute();
+
     watch(route, ()=>{
       check();
     })

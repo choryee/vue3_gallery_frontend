@@ -8,8 +8,8 @@ const store = createStore({
                 id: 0
             }
         }
-    },
-    mutations: {
+    },  //state()
+    mutations: { // 밑의 함수로, 위 state의 값을 변경하는 것.
         setAccount(state, payload) {
             state.account.id = payload;
         },
@@ -17,5 +17,5 @@ const store = createStore({
         //     state.account.id = 0;
         // }
     }
-})
+}) // createStore
 export default store;

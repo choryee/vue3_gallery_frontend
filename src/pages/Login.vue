@@ -12,7 +12,8 @@
         <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model="state.form.password" @keyup.enter="submit">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+               v-model="state.form.password" @keyup.enter="submit">
         <label for="floatingPassword">Password</label>
       </div>
 
@@ -44,7 +45,7 @@ export  default {
     })
 
     const submit = ()=>{
-      axios.post("/api/account/login", state.form).then(({data})=>{
+      axios.post("/api/account/login", state.form).then(({data})=>{ // 성공시, data는 서버에서 1로 옴.
         store.commit('setAccount', data);
         sessionStorage.setItem('id', data);
         console.log('login  >>>',  data);
